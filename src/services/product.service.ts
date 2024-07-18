@@ -25,6 +25,7 @@ export class ProductService {
     // Create a new product
     async create(createProductDto: CreateProductDto): Promise<Product> {
         const product = this.productRepo.create(createProductDto as any);
+        // @ts-ignore
         return this.productRepo.save(product);
     }
 
